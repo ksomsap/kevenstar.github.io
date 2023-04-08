@@ -19,7 +19,23 @@
             <?php
               include("config.php");
               $query = $connect->query("SELECT * FROM member");
-            ?>     
+            ?>  
+            <table>
+                <tr>
+                    <td>No</td>
+                    <td>E-Mail</td>
+                </tr>
+                <?php
+                $no = 1;
+                while($row = $query->fetch_assoc()){
+                    echo "<tr>
+                        <td>$no</td>
+                        <td>{$row['name']}</td>
+                    </tr>";
+                    $no++;
+                }
+                ?>
+            </table>   
           </div>
         </div>
         <!-- Float Column 2-->
