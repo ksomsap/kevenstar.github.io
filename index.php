@@ -30,7 +30,8 @@
                 while($row = $query->fetch_assoc()){
                     echo "<tr>
                         <td>$no</td>
-                        <td>{$row['name']}</td>
+                        <td>{$row['email']}</td>
+                        <td>{$row['pass']}</td>
                     </tr>";
                     $no++;
                 }
