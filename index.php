@@ -1,11 +1,12 @@
 <?php
 session_start();
 if (!isset($_SESSION["user"])) {
-   header("Location: login.php");
+    header("Location: login.php");
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,10 +15,35 @@ if (!isset($_SESSION["user"])) {
     <link rel="stylesheet" href="style.css">
     <title>User Dashboard</title>
 </head>
+
 <body>
     <div class="container">
         <h1>Welcome to Dashboard</h1>
+        <div>
+            <?php
+            include("config.php");
+            $query = $conn->query("SELECT * FROM users");
+            ?>
+            <table>
+                <tr>
+                    <td>No</td>
+                    <td>E-Mail</td>
+                </tr>
+                <?php
+                $no = 1;
+                while ($row = $query->fetch_assoc()) {
+                    echo "<tr>
+                        <td>{$row['id']}</td>
+                        <td>{$row['full_name']}</td>
+                        <td>{$row['email']}</td>
+                    </tr>";
+                    $no++;
+                }
+                ?>
+            </table>
+        </div>
         <a href="logout.php" class="btn btn-warning">Logout</a>
     </div>
 </body>
+
 </html>
