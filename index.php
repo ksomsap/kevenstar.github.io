@@ -24,16 +24,19 @@ if (!isset($_SESSION["user"])) {
             include("config.php");
             $query = $conn->query("SELECT * FROM users");
             ?>
-            <table>
-                <tr>
-                    <td>No</td>
-                    <td>E-Mail</td>
-                </tr>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Full Name</th>
+                        <th scope="col">E-mail</th>
+                    </tr>
+                </thead>
                 <?php
                 $no = 1;
                 while ($row = $query->fetch_assoc()) {
                     echo "<tr>
-                        <td>{$row['id']}</td>
+                        <th scope='row'>{$row['id']}</th>
                         <td>{$row['full_name']}</td>
                         <td>{$row['email']}</td>
                     </tr>";
