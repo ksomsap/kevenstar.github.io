@@ -16,31 +16,10 @@
           <div class="green"></div>
           <h1>Please Login to access all of the member data.</h1>
           <div class="data-scroll">
-            <h1>Helloooooooooooo</h1>
-            <h1>Helloooooooooooo</h1>
-            <h1>Helloooooooooooo</h1>
-            <h1>Helloooooooooooo</h1>
-            <h1>Helloooooooooooo</h1>
-            <h1>Helloooooooooooo</h1>
-            <h1>Helloooooooooooo</h1>
-            <h1>Helloooooooooooo</h1>
-            <h1>Helloooooooooooo</h1>
-            <h1>Helloooooooooooo</h1>
-            <h1>Helloooooooooooo</h1>
-            <h1>Helloooooooooooo</h1>
-            <h1>Helloooooooooooo</h1>
-            <h1>Helloooooooooooo</h1>
-            <h1>Helloooooooooooo</h1>
-            <h1>Helloooooooooooo</h1>
-            <h1>Helloooooooooooo</h1>
-            <h1>Helloooooooooooo</h1>
-            <h1>Helloooooooooooo</h1>
-            <h1>Helloooooooooooo</h1>
-            <h1>Helloooooooooooo</h1>
-            <h1>Helloooooooooooo</h1>
-            <h1>Helloooooooooooo</h1>
-            <h1>Helloooooooooooo</h1>
-            <h1>Helloooooooooooo</h1>
+            <?php
+              include("config.php");
+              $query = $connect->query("SELECT * FROM member");
+            ?>     
           </div>
         </div>
         <!-- Float Column 2-->
